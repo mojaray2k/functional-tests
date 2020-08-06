@@ -1,19 +1,8 @@
-import Environment  from "./Environment";
+import getEnvironment from "./getEnvironment";
 
-export default function getEnvironment() : string {
-
-    const url = document.baseURI;
-
-    if (url.includes("localhost")) {
-        return Environment.LOCAL;
-    }
-
-    if (url.includes("http://fxsap-")) { // f5 - this is not bullet proof but fails gracefully
-
-        const env = url.substring(url.indexOf("-") + 1, url.indexOf("."));
-
-        return Environment[env.toUpperCase()];
-    }
-
-    return null;
-}
+describe("getEnvironment", () => {
+  it("should return current environment", () => {
+    const expected = "LOCAL";
+    expect(getEnvironment()).toBe(expected);
+  });
+});
