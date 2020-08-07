@@ -1,21 +1,13 @@
-import {
-    AES,
-    enc,
-    mode,
-    pad,
-} from "crypto-js";
+import { encrypt, decrypt } from "./cryptoUtils";
 
-const options = {
-    mode: mode.CBC,
-    padding: pad.Pkcs7
-};
+describe("encrypt and decrypt ", () => {
+  const encryptItem = "myPassword";
+  const secretKey = "#passKey@321+%$i";
+  const encryptedItem = encrypt(encryptItem, secretKey);
 
-export function encrypt(encryptItem: string, secretKey: string) {
-    const bytes = AES.encrypt(encryptItem, secretKey, options);
-    return bytes.toString();
-}
+  it("should return decrypted item", () => {
+    const expected = "myPassword";
 
-export function decrypt(decryptItem: string, secretKey: string) {
-    const bytes = AES.decrypt(decryptItem, secretKey, options);
-    return bytes.toString(enc.Utf8);
-}
+    expect(decrypt(encryptedItem, secretKey)).toBe(expected);
+  });
+});
