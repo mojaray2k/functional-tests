@@ -1,12 +1,11 @@
 import arrayInsert from "./arrayInsert";
 
 describe("arrayInsert", () => {
-  it("should return array containing an array of new items", () => {
+  it("should return flatten array ", () => {
     const arr = ["A", "B", "F"];
-    const newItems = ["C", "D", "E"];
     const index = 1;
-    const expected = ["A", ["C", "D", "E"], "B", "F"];
+    const expected = ["A", "C", "D", "E", "B", "F"];
 
-    expect(arrayInsert(arr, index, newItems)).toEqual(expected);
+    expect(arrayInsert(arr, index, "C", "D", "E")).toEqual(expected);
   });
 });
