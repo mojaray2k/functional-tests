@@ -1,21 +1,18 @@
 import { isAmount, convertAmountQuickKeys } from "./amountQuickKeys";
 
 describe("isAmount", () => {
-  it("should return true", () => {
-    const expected = true;
+  it("should be truthy", () => {
     const value = "1000";
-    expect(isAmount(value)).toBe(expected);
+    expect(isAmount(value)).toBeTruthy();
   });
-  it("should return false", () => {
-    const expected = false;
+  it("should be falsy", () => {
     const value = "";
-    expect(isAmount(value)).toBe(expected);
+    expect(isAmount(value)).toBeFalsy();
   });
 });
 describe("convertAmountQuickKeys", () => {
-  it("should return passed value", () => {
-    const expected = "1000";
+  it("should be truthy", () => {
     const value = "1000";
-    expect(convertAmountQuickKeys(value)).toBe(expected);
+    expect(convertAmountQuickKeys(value)).toBeTruthy();
   });
 });

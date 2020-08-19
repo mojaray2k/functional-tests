@@ -1,10 +1,9 @@
 import { isPercent, toPercent } from "./percentages";
 
 describe("isPercent", () => {
-  it("should return true", () => {
+  it("should be truthy", () => {
     const value = 100;
-    const expected = true;
-    expect(isPercent(value)).toBe(expected);
+    expect(isPercent(value)).toBeTruthy();
   });
 });
 describe("toPercent", () => {
