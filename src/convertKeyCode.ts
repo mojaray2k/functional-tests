@@ -1,4 +1,4 @@
-function convertKeyCode(event: any) {
+function convertKeyCode(event: KeyboardEvent) {
   const keyCode = event.keyCode || event.which;
   if (keyCode) {
     const isLeftDir = keyCode === 37;

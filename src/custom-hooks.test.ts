@@ -10,10 +10,11 @@ describe("useInstance", () => {
   });
 });
 describe("usePrevious", () => {
-  it("should return the previous value to be undefined", () => {
-    const initialValue = "";
-    const { result } = renderHook(() => usePrevious(initialValue));
-
-    expect(result.current).toBeUndefined();
+  it("should be truthy", () => {
+    const value = { initialValue: 3 };
+    const {
+      result: { current },
+    } = renderHook(() => usePrevious(value));
+    expect(current).toBeTruthy();
   });
 });
