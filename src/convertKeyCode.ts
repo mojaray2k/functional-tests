@@ -20,7 +20,6 @@ function convertKeyCode(event: KeyboardEvent) {
       isEnter: keyCode === 13,
       isEsc: keyCode === 27,
       isHome: keyCode === 36,
-      isLeftDir,
       isPageDown,
       isPageUp,
       isRightDir,

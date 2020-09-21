@@ -2,9 +2,7 @@ import convertKeyCode from "./convertKeyCode";
 
 describe("convertKeyCode", () => {
   it("should return an object containing if the key is actually pressed", () => {
-    const keyDownEvent = {
-      keyCode: 37,
-    };
+      const keyDownEvent = new KeyboardEvent(keyDownEvent);
 
     const expected = {
       char: "%",

@@ -1,7 +1,7 @@
 import {
   formatWithPrecision,
-  toFixedBigNumber,
   parseWithPrecision,
+  toFixedBigNumber,
 } from "./bigNumbers";
 
 describe("toFixedBigNumber", () => {
